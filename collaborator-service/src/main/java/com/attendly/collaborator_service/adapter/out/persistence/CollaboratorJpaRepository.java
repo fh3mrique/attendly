@@ -1,4 +1,8 @@
 package com.attendly.collaborator_service.adapter.out.persistence;
 
-public class CollaboratorJpaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface CollaboratorJpaRepository extends JpaRepository<CollaboratorJpaEntity, UUID> {
 }

@@ -2,8 +2,15 @@ package com.attendly.collaborator_service.application.usecase;
 
 import com.attendly.collaborator_service.domain.model.Collaborator;
 import com.attendly.collaborator_service.port.in.CreateCollaborator;
+import com.attendly.collaborator_service.port.out.CollaboratorRepository;
 
 public class CreateCollaboratorUseCase implements CreateCollaborator {
+
+    private CollaboratorRepository collaboratorRepository;
+
+    public CreateCollaboratorUseCase (CollaboratorRepository collaboratorRepository){
+        this.collaboratorRepository = collaboratorRepository;
+    }
 
 
     @Override
@@ -12,7 +19,7 @@ public class CreateCollaboratorUseCase implements CreateCollaborator {
         Collaborator collaborator = Collaborator.create(input.name());
 
 
-        //salva repositorio
+        collaboratorRepository.save(collaborator);
         //publicar evento
 
         return new CreateCollaboratorOutput(

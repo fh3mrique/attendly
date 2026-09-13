@@ -1,6 +1,6 @@
 package com.attendly.collaborator_service.application.usecase;
 
-import com.attendly.collaborator_service.domain.enums.CollaboratorStatus;
+import com.attendly.collaborator_service.domain.model.enums.CollaboratorStatus;
 
 import java.util.UUID;
 

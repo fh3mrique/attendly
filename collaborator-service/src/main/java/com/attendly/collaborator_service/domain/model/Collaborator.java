@@ -1,7 +1,7 @@
 package com.attendly.collaborator_service.domain.model;
 
 
-import com.attendly.collaborator_service.domain.enums.CollaboratorStatus;
+import com.attendly.collaborator_service.domain.model.enums.CollaboratorStatus;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -24,6 +24,14 @@ public class Collaborator {
                 name,
                 CollaboratorStatus.ACTIVE
         );
+    }
+
+    public static Collaborator rehydrate(
+            UUID id,
+            String name,
+            CollaboratorStatus status) {
+
+        return new Collaborator(id, name, status);
     }
 
     public UUID id() {
